@@ -7,7 +7,33 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.badge{
+  background-color: blue;
+  color:white;
+  border-radius: 2px 2px 2px 2px;
+  margin : 1rem 1rem;
+  padding : 0rem 1rem;
+  text-align: center;
+}
+.btn{
+  font-size: large;
+  border-radius: 2px 2px 2px 2px;
+  margin : 1rem 1rem;
+  padding : 0rem 1rem;
+  text-align: center;
+}
+.btn-secondary{
+
+  background-color: grey;
+}
+
+.btn-primary{
+
+  background-color: rgb(4, 9, 248);
+}
+
+.btn-warning{
+
+  background-color: rgb(248, 232, 4);
+  color:black;
 }
