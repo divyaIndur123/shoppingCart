@@ -2,28 +2,31 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 0,
+    value: this.props.counter.value,
     imgUrl: "https://picsum.photos/200",
     tags: ["tag1", "tag2", "tag3"],
   };
 
   incrementHandler = (product) => {
-    this.setState({count:this.state.count+1});
-    console.log(product);
+    this.setState({value:this.state.value+1});
+    
   };
 
   render() {
+     
     return (
-      <React.Fragment>
+      <div>
+        
+        <h1>{this.props.id}</h1>  
         <span className={"badge " + this.getBackgroungColor()}>
           {this.formatCount()}
         </span>
         <button className="btn btn-secondary" onClick={()=>this.incrementHandler({id:1})}>
           Increment
         </button>
-        <ul>{this.checkForTag()}</ul>
-      </React.Fragment>
-    );
+        <button className="btn btn-danger" onClick={()=>this.props.onDelete(this.props.counter.id)}>Delete</button>
+      </div>)    
+     
   }
 
   checkForTag() {
@@ -35,11 +38,11 @@ class Counter extends Component {
   }
 
   getBackgroungColor() {
-    return this.state.count === 0 ? "btn-warning" : "btn-primary";
+    return this.state.value === 0 ? "btn-warning" : "btn-primary";
   }
 
   formatCount() {
-    const { count } = this.state;
+    const { value: count } = this.state;
     return count === 0 ? "ZERO" : count;
   }
 }
